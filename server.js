@@ -20,7 +20,7 @@ app.use(express.static("Develop/public"));
 //   useFindAndModify: false
 // });
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+  process.env.MONGODB_URI || 'mongodb://localhost/Ledger',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
