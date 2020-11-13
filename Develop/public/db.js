@@ -50,7 +50,7 @@ function checkDatabase(){
           "Content-Type": "application/json"
         }
       })
-      .then(res => res.JSON())
+      .then(res => res.json())
       .then(()=> {
         // if works opens tran in browserdb
        // creates order for read & write capabilities so data doesnt get over written
