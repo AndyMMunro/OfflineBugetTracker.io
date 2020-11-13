@@ -1,13 +1,13 @@
 let db;
 //  creating DB
-const request = window.indexedDB.open("ledger",1);
+const request = window.indexedDB.open("ledger", 1);
 
 // schema
 request.onupgradeneeded = event => {
   const db = event.target.result;
 
   // object creation and key name and liner cataloging for query purposes
-  db.creatObjectStore("pendingTrans",{autoIncrement: true});
+  db.createObjectStore("pendingTrans",{autoIncrement: true});
 };
 
 // varifies online connectivity
@@ -37,11 +37,11 @@ function saveRecord(record){
 
 function checkDatabase(){
   const transaction = db.transaction(["pendingTrans"], "readwrite");
-  const store = transaction.objectStore("pending");
+  const store = transaction.objectStore("pendingTrans");
   const getAll = store.getAll();
 
   getAll.onsuccess = () => {
-    if (getAll.result.lengthe > 0){
+    if (getAll.result.length > 0){
       fetch("/api/transaction/bulk", {
         method: "POST",
         body:JSON.stringify(getAll.result),
