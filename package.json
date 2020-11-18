@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "bugs": {},
-  "homepage": "",
   "dependencies": {
     "bootstrap": "^4.5.3",
     "compression": "^1.7.4",

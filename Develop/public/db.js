@@ -24,10 +24,10 @@ request.onerror = event => {
 };
 
 function saveRecord(record){
-  // creats order for read & write capabilities so data doesnt get over written
+  // creats order for read & write capabilities so data doesn't get over written
   const transaction = db.transaction(["pendingTrans"], "readwrite");
 
-  // grants access to storeed data
+  // grants access to stored data
   const store = transaction.objectStore("pendingTrans");
 
   // place data in store
@@ -53,10 +53,10 @@ function checkDatabase(){
       .then(res => res.json())
       .then(()=> {
         // if works opens tran in browserdb
-       // creates order for read & write capabilities so data doesnt get over written
+       // creates order for read & write capabilities so data doesn't get over written
         const transaction = db.transaction(["pendingTrans"], "readwrite");
 
-        // grants access to storeed data
+        // grants access to stored data
         const store = transaction.objectStore("pendingTrans");
 
         // place data in store
